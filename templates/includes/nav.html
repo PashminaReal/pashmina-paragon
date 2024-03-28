@@ -1,0 +1,118 @@
+<div class="collapse navbar-collapse" id="main-nav">
+    <ul class="navbar-nav w-auto mx-auto">
+        <!--Woman-->
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-main font-weight-bold mr-5" href="" id="menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-link text-main font-weight-bold">
+                    <div>
+                        <!--<i class="fas fa-child-dress mr-3 d-inline d-lg-none text-main"></i><i class="fi fi-rs-woman-head"></i>-->
+                        <span class="nav-item mr-2 text-main">Woman</span><span><i class="fas fa-chevron-down  text-main"></i></span>
+                        <hr class="hr-white mb-4 d-sm-block d-lg-none  bg-white">
+                    </div> 
+                </div>
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="menu-link">
+                <a href="{% url 'woman_products' %}?category=sweater"class="dropdown-item item-list">Sweater</a>
+                <a href="{% url 'woman_products' %}?category=hat" class="dropdown-item item-list">Hat</a>
+                <a href="{% url 'woman_products' %}?category=scarve" class="dropdown-item item-list">Scarve</a>
+            </div>
+        </li>
+        <!--Man-->
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-main font-weight-bold mr-5" href="" id="menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-link text-main font-weight-bold">
+                    <div>
+                        <!--<i class="fas fa-user mr-3 d-inline d-lg-none text-main"></i>-->
+                        <span class="nav-item mr-2 text-main">Man</span><span><i class="fas fa-chevron-down  text-main"></i></span>
+                        <hr class="hr-white mb-4 d-sm-block d-lg-none  bg-white">
+                    </div> 
+                </div>
+            </a>
+             <div class="dropdown-menu border-0" aria-labelledby="menu-link">
+                <a href="{% url 'man_products' %}?category=sweater" class="dropdown-item item-list">Sweater</a>
+                <a href="{% url 'man_products' %}?category=hat" class="dropdown-item item-list">Hat</a>
+                <a href="{% url 'man_products' %}?category=scarves" class="dropdown-item item-list">Scarves</a>
+            </div>
+        </li>
+        <!--Unisex-->
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-main font-weight-bold mr-5" href="" id="menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-link text-main font-weight-bold">
+                    <div>
+                        <!--<i class="fas fa-utensils mr-3 d-inline d-lg-none text-main"></i>-->
+                        <span class="nav-item mr-2 text-main">Unisex</span><span><i class="fas fa-chevron-down  text-main"></i></span>
+                        <hr class="hr-white mb-4 d-sm-block d-lg-none  bg-white">
+                    </div> 
+                </div>
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="menu-link">
+                <a href="{% url 'unisex_products' %}?category=sweater" class="dropdown-item item-list">Sweater</a>
+                <a href="{% url 'unisex_products' %}?category=hat" class="dropdown-item item-list">Hat</a>
+                <a href="{% url 'unisex_products' %}?category=scarves" class="dropdown-item item-list">Scarves</a>
+            </div>
+        </li>
+        <!--account-->
+        <li class="nav-item dropdown d-md-block d-lg-none">
+            <a class="logo-font font-weight-bold nav-link text-main font-weight-bold mr-5" href="#" id="user-options2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-link text-main font-weight-bold">
+                    <div>
+                        <i class="fas fa-user mr-3 text-main"></i><span class="nav-item mr-3 text-main">Account</span><span><i class="fas fa-chevron-down  text-main"></i></span>
+                        <hr class="hr-white mb-4 d-sm-block d-lg-none  bg-white">
+                    </div>
+                </div>
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
+                        <a href="" class="dropdown-item dropdown-account">Admin</a>
+                    {% endif %}
+                        <a href="{% url 'profile' %}" class="dropdown-item dropdown-account">My Account</a>
+                        <a href="{% url 'account_logout' %}" class="dropdown-item dropdown-account">Logout</a>
+                {% else %}
+                    <a href="{% url 'account_signup' %}" class="dropdown-item dropdown-account">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item dropdown-account">Login</a>
+                {% endif %}
+            </div>
+        </li>
+        <!--home-->
+        <li class="nav-item nav-item-home">
+            <a class="logo-font font-weight-bold nav-link text-main font-weight-bold mr-5" href="{% url 'home' %}" id="home-link" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-link text-main font-weight-bold">
+                    <div>
+                        <i class="fas fa-home mr-3 d-inline d-lg-none text-main"></i>
+                        <span class="nav-item text-main">Home</span>
+                        <hr class="hr-white mb-4 d-sm-block d-lg-none  bg-white">
+                    </div>
+                </div>
+            </a>
+        </li>
+        <!--about(d-none class added to hide )-->
+        <li class="nav-item d-none">
+            <a class="logo-font font-weight-bold nav-link text-main font-weight-bold mr-5" href="{% url 'man_products' %}" id="about-link" aria-haspopup="true" aria-expanded="false">
+                <div class="nav-link text-main font-weight-bold">
+                    <div>
+                        <i class="fas fa-info-circle mr-3 d-inline d-lg-none text-main"></i>
+                        <span class="nav-item text-main">About Us</span>
+                        <hr class="hr-white mb-4 d-sm-block d-lg-none  bg-white">
+                    </div>
+                </div>
+            </a>
+        </li>
+         <!--basket-->
+        <li class="nav-item d-md-block d-lg-none">
+            <a class="{% if sum_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link text-main font-weight-bold" href="{% url 'view_basket' %}">
+                <div class="nav-link text-main font-weight-bold">
+                    <div><i class="fas fa-shopping-basket text-nav mr-3 text-main"></i>
+                        <span class="nav-item text-main">
+                            {% if sum_total %}
+                                £{{ sum_total|floatformat:2 }}
+                            {% else %}
+                                £0.00
+                            {% endif %}
+                        </span>
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>

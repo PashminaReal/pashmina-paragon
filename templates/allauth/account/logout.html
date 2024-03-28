@@ -1,0 +1,36 @@
+{% extends "account/base.html" %}
+
+{% load static %}
+{% block extra_css_allauth %}
+    <link rel="stylesheet" type="text/css" href="{% static 'allauth_css/allauth.css' %}">
+{% endblock %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+
+{% block inner_content %}
+
+<div class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="login-heading text-center font-weight-bold first-text">{% trans "Sign Out" %}</h2>
+
+                <p class="text-center lead second-text text-muted">{% trans 'Are you sure you want to sign out?' %}</p>
+
+
+                <form method="post" action="{% url 'account_logout' %}" class="text-center">
+                    {% csrf_token %}
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                    {% endif %}
+                    <button type="submit" class="btn btn-dark btn-lg btn-signout p-2">{% trans 'Sign Out' %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

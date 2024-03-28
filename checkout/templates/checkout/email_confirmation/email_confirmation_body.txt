@@ -1,0 +1,25 @@
+
+
+Hi {{ order.full_name }}!
+
+Thank You for your order with Pashmina Collection. Your order information is below :
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: £ {{ order.total | floatformat:2 }}
+Delivery Cost: £ {{ order.delivery_cost | floatformat:2 }}
+Total Price: £ {{ order.sum_total | floatformat:2 }}
+
+Your order will be delivered to the following delivery address within 5-7 business days
+
+{{ order.street_address }}
+{{ order.postal_code }}
+
+We have got your contact number as {{ order.contact_number }}.
+
+Please feel free to contact us if you have any questions.
+
+Sincerly, 
+
+Pashmina Collection UK

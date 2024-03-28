@@ -1,0 +1,120 @@
+.product-display-container {
+    margin-bottom: 5rem;
+    margin-top: -1rem;
+}
+
+.product-details-container {
+    margin-bottom: 8rem;
+    margin-top: -3rem;
+}
+
+li.list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card.menu-card {
+    max-height: 45rem;
+    min-height: 45rem;
+}
+
+.card-image {
+    height: 35rem;
+    min-height: 35rem;
+}
+
+img.card-img-top.img-fluid {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+img.card-img-top.no-image.img-fluid {
+    object-fit: fill;
+}
+
+del.custom-strike {
+    text-decoration-color: brown;
+    position: relative;
+}
+
+.small-thumbnail {
+    width: 50px;
+    /* Adjust the width as needed */
+    height: 50px;
+    /* Adjust the height as needed */
+}
+
+
+/* Custom styles for the thumbnail slider */
+
+.thumbnail-container {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.thumbnail-slider {
+    display: inline-block;
+    margin-right: 10px;
+    /* Adjust the spacing between thumbnails as needed */
+    vertical-align: top;
+}
+
+.thumbnail-slider img {
+    width: 80px;
+    /* Adjust the width of each thumbnail as needed */
+    height: auto;
+    cursor: pointer;
+    border: 2px solid transparent;
+    /* Border style for unselected thumbnails */
+}
+
+.thumbnail-slider img.active {
+    border-color: #007bff;
+    /* Border color for the selected thumbnail */
+}
+
+select#sizeDropdown,
+select#colorDropdown,
+input#id_qty_1,
+button#increase-qty_1,
+button#decrease-qty_1 {
+    font-size: 1.25rem;
+}
+
+
+/*--add/edit product--*/
+
+.admin-container {
+    padding-top: 3rem;
+    padding-bottom: 10rem;
+}
+
+label.form-check-label {
+    margin-left: 1rem;
+}
+
+
+/*----Media---*/
+
+@media screen and (min-width: 767px) and (max-width: 992px) {
+    .product-details-container {
+        margin-top: 10rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .product-sub-form {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .product-sub {
+        text-align: center;
+    }
+    .product-sub-form {
+        margin: auto;
+        width: 50%;
+    }
+}

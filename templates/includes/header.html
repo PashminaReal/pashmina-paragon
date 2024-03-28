@@ -1,0 +1,18 @@
+<div class="container-fluid header-container bg-main">
+    <!--hide offer/promo message on small screen and display booking and call button instead -->
+    <div class="row d-none d-md-block">
+        <div class="col-12 offer-col ">
+            <!--This col is to display any offer of promotion on top of the carousel-->
+            {% for offer in offertext %}
+                <h3 class="offer-text text-center pb-1 pt-1 display-inline text-main ">
+                    {% if offer.offer_title1 %}
+                        <span class="">{{ offer.offer_title2 }}</span>
+                    {% endif %}
+                    {% if offer.offer_title2 %}
+                        <span class="d-none">{{ offer.offer_title3 }}</span>
+                    {% endif %}
+                </h3>
+            {% endfor %}
+        </div>
+    </div>
+</div>
