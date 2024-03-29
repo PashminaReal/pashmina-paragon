@@ -3,11 +3,26 @@
     - python -m venv env    (create virtual environment)
     - env\Scripts\activate  (activate virtual environment)
 
-## Django Installation
+## Django/REST framework Installation
 - Below commands were used to install and set up django
     - pip3 install django    (install django)
+    - pip install djangorestframework (Install Django REST framework)
     - django-admin startproject neupane_driving . (create a project named neupane_driving, dot at the end of the project name ensure that its created at the correct directory)
 
+## REST Framework setup
+
+  - Add below to Django settings:
+   - ```
+      INSTALLED_APPS = [
+  
+        'rest_framework',
+      ]
+     ```
+
+ - REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+    }
 
 ## Allauth Setup
 - Below steps/command used to setup allauth
